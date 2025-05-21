@@ -30,7 +30,7 @@ else:
     print('{}/{} = {}'.format(a, b, result))
 
 '''
-
+'''
 def divide(x, y):
     try:
         result = x / y
@@ -45,4 +45,77 @@ print('divide(100, 2) 함수호출 :')
 divide(100, 2)
 print('divide(100, 0) 함수호출 :')
 divide(100, 0)
- 
+ '''
+'''
+f = open(r'c:\pythonsample\test.txt', 'r')
+s = f.read()
+print(s)
+f.close()
+'''
+'''
+f = open(r'c:\pythonsample\test.txt', 'r')
+s = f.readline()
+print(s, end = '')
+s = f.readline()
+print(s, end = '')
+f.close()
+'''
+'''
+f = open(r'c:\pythonsample\test.txt', 'a+')
+f.write('This will be appended.\n')
+f.write('This too.\n')
+f.close()
+'''
+'''
+f = open(r'c:\pythonsample\test.txt', 'r', encoding = 'UTF8')
+s = f.read()
+print(s, end = '')
+'''
+'''
+
+class PersonalInfo:
+
+#Class attribute
+    nationality = 'Korean'
+
+#Initalize, Instance attributes
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    #Instance method
+    def getPersonalInfo(self):
+        print('Name:', self.name)
+        print('Age:', self.age)
+
+    #Instance method
+    def ageGroup(self):
+        if self.age < 30:
+            return 'under 30'
+        else:
+            return 'over 30'
+    
+#create an instance object
+personal_choi = PersonalInfo('CK Choi', 25)
+personal_choi.getPersonalInfo()
+print('Age Group:', personal_choi.ageGroup())
+print('Nationality:', personal_choi.nationality)
+'''
+
+class Cat:
+    def __init__(self, name, color):
+        self.name = name
+        self.color = color
+
+        
+    def meow(self):
+        print(f'내 이름은 {self.name}, 색깔은 {self.color}','야옹 야옹~~~')
+
+nabi = Cat('나비', '검은색')
+nero = Cat('네로', '흰색')
+mimi = Cat('미미', '갈색')
+nabi.meow()
+nero.meow()
+mimi.meow()
+
+
