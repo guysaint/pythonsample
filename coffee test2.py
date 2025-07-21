@@ -13,33 +13,18 @@ def show_menu():
     print("0. 종료")
     print("*"*20)
     
-def tal():
-    total=price-money
-    print("금액이 부족합니다.",str(total)+"원을 더 투입하세요.")
-    addmoney=int(input("추가 금액투입하세요."))
-    if addmoney>total:
-        print(drink+"와",str(addmoney-total)+"원을 드립니다. 감사합니다. 또 오세요~😍")
-    while addmoney<total:
-        print("금액이 부족합니다.",str(total-addmoney)+"원을 더 투입하세요.")
-        total=total-addmoney
-        addmoney=int(input("추가 금액투입하세요."))
-        if addmoney>total:
-            print(drink+"와",str(addmoney-total)+"원을 드립니다. 감사합니다. 또 오세요~😍")
-        elif addmoney==total:
-            print(drink+"를 드리겠습니다. 감사합니다.")
 
 def vending_machine():
     while True:
         show_menu()
-        choice=input("원하시는 메뉴의 숫자를 입력하세요.")
+        choice=input("원하시는 메뉴의 숫자를 입력하세요: ")
         drink = menu[choice]["name"]
         price = menu[choice]["price"]
-        if choice==0:
-            print("안녕히 가세요.")
+        
+        if choice == 0:
+            print("안녕히 가세요")
             break
-        elif choice not in menu.keys():
-            print("😅잘못입력하셨습니다. 다시 선택해주세요.")
-            continue
+  
         elif choice=="1":
             print("😄"+drink+"를 선택하셨습니다. 가격:"+str(price)+"원")
             money=int(input("투입할 금액을 입력해주세요."))
@@ -129,5 +114,26 @@ def vending_machine():
                         print(drink+"와",str(addmoney-total)+"원을 드립니다. 감사합니다. 또 오세요~😍")
                     elif addmoney==total:
                         print(drink+"를 드리겠습니다. 감사합니다.")
+         
+        else: 
+            print("😅잘못입력하셨습니다. 다시 선택해주세요.")
+            continue
         
 vending_machine()
+
+'''
+def tal():
+    total=price-money
+    print("금액이 부족합니다.",str(total)+"원을 더 투입하세요.")
+    addmoney=int(input("추가 금액투입하세요."))
+    if addmoney>total:
+        print(drink+"와",str(addmoney-total)+"원을 드립니다. 감사합니다. 또 오세요~😍")
+    while addmoney<total:
+        print("금액이 부족합니다.",str(total-addmoney)+"원을 더 투입하세요.")
+        total=total-addmoney
+        addmoney=int(input("추가 금액투입하세요."))
+        if addmoney>total:
+            print(drink+"와",str(addmoney-total)+"원을 드립니다. 감사합니다. 또 오세요~😍")
+        elif addmoney==total:
+            print(drink+"를 드리겠습니다. 감사합니다.")
+'''

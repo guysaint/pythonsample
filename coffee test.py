@@ -23,7 +23,7 @@ def vending_machine():
         choice=input("원하시는 메뉴의 숫자를 입력하세요.")
         drink = menu[choice]["name"]
         price = menu[choice]["price"]
-        if choice==0:
+        if choice=="0":
             print("안녕히 가세요.")
             break
         elif choice not in menu.keys():
